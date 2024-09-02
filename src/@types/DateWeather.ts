@@ -5,4 +5,8 @@ export default interface DateWeather {
     code: number
     description: string
   }
+  place: {
+    latitude: number
+    longitude: number
+  }
 }
