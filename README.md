@@ -2,6 +2,9 @@
 
 📸📸📸 九州旅行中の天気をNotion上に表示する！  
 
+[![ci](https://github.com/osawa-koki/kyusyu-travel-weather-on-notion/actions/workflows/ci.yml/badge.svg)](https://github.com/osawa-koki/kyusyu-travel-weather-on-notion/actions/workflows/ci.yml)
+[![cd](https://github.com/osawa-koki/kyusyu-travel-weather-on-notion/actions/workflows/cd.yml/badge.svg)](https://github.com/osawa-koki/kyusyu-travel-weather-on-notion/actions/workflows/cd.yml)
+
 ![成果物](./fruit.gif)  
 
 ## 準備方法
