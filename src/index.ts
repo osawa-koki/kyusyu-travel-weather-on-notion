@@ -6,7 +6,7 @@ import weatherCode2Emoji from './util/weatherCode2Emoji'
 function main() {
   const properties = PropertiesService.getScriptProperties()
 
-  const datePlaces = JSON.parse(properties.getProperty('DATE_PLACES')!)
+  const { datePlaces } = JSON.parse(properties.getProperty('DATE_PLACES')!)
 
   const dateWeatherSets: DateWeather[] = []
 
@@ -28,7 +28,7 @@ function main() {
   }
 
   if (dateWeatherSets.length === 0) {
-    Logger.log('No data')
+    Logger.log('No data to update...')
     return
   }
 
