@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-
-const esbuild = require('esbuild')
-const { GasPlugin } = require('esbuild-gas-plugin')
+import esbuild from 'esbuild'
+import { GasPlugin } from 'esbuild-gas-plugin'
 
 esbuild
   .build({
@@ -15,5 +13,3 @@ esbuild
     console.error(err)
     process.exit(1)
   })
-
-/* eslint-enable @typescript-eslint/no-var-requires */
