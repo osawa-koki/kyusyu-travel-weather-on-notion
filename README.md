@@ -2,6 +2,8 @@
 
 📸📸📸 九州旅行中の天気をNotion上に表示する！  
 
+![成果物](./fruit.gif)  
+
 ## 準備方法
 
 ### 1. Google Apps Script APIの有効化
