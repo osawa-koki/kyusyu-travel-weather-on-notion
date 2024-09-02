@@ -8,9 +8,13 @@
   "license": "Apache-2.0",
   "private": false,
   "scripts": {
-    "build": "node ./build.js && cp ./src/*.json ./dist/"
+    "build": "node ./build.js && cp ./src/*.json ./dist/",
+    "push": "clasp push",
+    "pull": "clasp pull",
+    "open": "clasp open"
   },
   "dependencies": {
+    "@google/clasp": "^2.4.2",
     "esbuild": "^0.23.1",
     "esbuild-gas-plugin": "^0.8.0"
   }
