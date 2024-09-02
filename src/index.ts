@@ -32,7 +32,8 @@ function main() {
     return
   }
 
-  Logger.log(JSON.stringify(dateWeatherSets))
+  const sortedDateWeatherSets = dateWeatherSets.sort((a, b) => a.date.localeCompare(b.date))
+  Logger.log(JSON.stringify(sortedDateWeatherSets))
 }
 
 declare let global: { handler: () => void }
