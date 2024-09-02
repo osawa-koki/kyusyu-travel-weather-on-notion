@@ -6,5 +6,12 @@
   "repository": "https://github.com/osawa-koki/kyusyu-travel-weather-on-notion.git",
   "author": "osawa-koki <koki@osawa.dev>",
   "license": "Apache-2.0",
-  "private": false
+  "private": false,
+  "scripts": {
+    "build": "node ./build.js && cp ./src/*.json ./dist/"
+  },
+  "dependencies": {
+    "esbuild": "^0.23.1",
+    "esbuild-gas-plugin": "^0.8.0"
+  }
 }
