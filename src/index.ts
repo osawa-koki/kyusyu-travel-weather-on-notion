@@ -1,5 +1,7 @@
 import DateWeather from './@types/DateWeather'
 import OpenMeteoDaily from './@types/OpenMeteoDaily'
+import createWeatherContent from './util/createWeatherContent'
+import uploadToNotion from './util/uploadToNotion'
 import urlGenerator from './util/urlGenerator'
 import weatherCode2Emoji from './util/weatherCode2Emoji'
 
@@ -23,7 +25,19 @@ function main() {
     }
     const weatherCode = json.daily.weather_code[index]
     const { emoji, description } = weatherCode2Emoji({ weatherCode })
-    dateWeatherSets.push({ date, weather: { emoji, code: weatherCode, description } })
+    dateWeatherSets.push({
+      date,
+      weather: {
+        emoji,
+        code: weatherCode,
+        description
+      },
+      place: {
+        latitude,
+        longitude
+      }
+    }
+    )
     Logger.log(date, emoji, description)
   }
 
@@ -32,7 +46,16 @@ function main() {
     return
   }
 
-  Logger.log(JSON.stringify(dateWeatherSets))
+  const sortedDateWeatherSets = dateWeatherSets.sort((a, b) => a.date.localeCompare(b.date))
+
+  const notionSecret = properties.getProperty('NOTION_SECRET')!
+  const notionBlockId = properties.getProperty('NOTION_BLOCK_ID')!
+
+  uploadToNotion({
+    notionSecret,
+    notionBlockId,
+    content: createWeatherContent({ dateWeathers: sortedDateWeatherSets })
+  })
 }
 
 declare let global: { handler: () => void }
