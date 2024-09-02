@@ -1,0 +1,10 @@
+{
+  "name": "kyusyu-travel-weather-on-notion",
+  "version": "1.0.0",
+  "description": "📸📸📸 九州旅行中の天気をNotion上に表示する！",
+  "main": "./src/index.ts",
+  "repository": "https://github.com/osawa-koki/kyusyu-travel-weather-on-notion.git",
+  "author": "osawa-koki <koki@osawa.dev>",
+  "license": "Apache-2.0",
+  "private": false
+}
